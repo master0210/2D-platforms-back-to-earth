@@ -546,10 +546,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 84fd544615938924ba53194c2c5e3ed4, type: 2}
   - {fileID: 11400000, guid: c03deee1eea3e9e47abdedaf0346407f, type: 2}
   - {fileID: 11400000, guid: d537c4818be1dc44eaf89ac16978db3f, type: 2}
-  - {fileID: 11400000, guid: e8e3c85eb213daf4b85fb3d78e197c8c, type: 2}
-  - {fileID: 11400000, guid: 283c3316e78f73a429ea5562c74487f8, type: 2}
-  - {fileID: 11400000, guid: 1453846b1289375449170166578fd060, type: 2}
-  - {fileID: 11400000, guid: 07c2eb827c7f0984aa9eca4af06a3c68, type: 2}
   _mainPanel: {fileID: 805397756}
   _stagePanel: {fileID: 1507832956}
   _levelPanel: {fileID: 855123561}
@@ -1833,6 +1829,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1194193475}
     m_Modifications:
+    - target: {fileID: 3999821199692393948, guid: 8c9a63ecb57fcd84caddac842ba7bc6e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0b77711a74a62e4384d0ddf684fa604, type: 3}
     - target: {fileID: 5890452484052450313, guid: 8c9a63ecb57fcd84caddac842ba7bc6e, type: 3}
       propertyPath: m_Name
       value: Stage_3
@@ -2109,6 +2109,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 855123562}
+  - component: {fileID: 855123564}
+  - component: {fileID: 855123563}
   m_Layer: 5
   m_Name: LevelPanel
   m_TagString: Untagged
@@ -2142,6 +2144,44 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &855123563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855123561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6399e6d95460d0349b37c483b31ce8c0, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &855123564
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855123561}
+  m_CullTransparentMesh: 1
 --- !u!1 &877107900
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,6 +2324,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1194193475}
     m_Modifications:
+    - target: {fileID: 3999821199692393948, guid: 8c9a63ecb57fcd84caddac842ba7bc6e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0b77711a74a62e4384d0ddf684fa604, type: 3}
     - target: {fileID: 5890452484052450313, guid: 8c9a63ecb57fcd84caddac842ba7bc6e, type: 3}
       propertyPath: m_Name
       value: Stage_1
@@ -3288,7 +3332,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 6399e6d95460d0349b37c483b31ce8c0, type: 3}
-  m_Type: 2
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3470,7 +3514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1507832957}
   - component: {fileID: 1507832959}
-  - component: {fileID: 1507832958}
+  - component: {fileID: 1507832960}
   m_Layer: 5
   m_Name: StagePanel
   m_TagString: Untagged
@@ -3503,7 +3547,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000061035}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1507832958
+--- !u!222 &1507832959
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507832956}
+  m_CullTransparentMesh: 1
+--- !u!114 &1507832960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3523,7 +3575,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6399e6d95460d0349b37c483b31ce8c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7ead361e1067d84d8ce5a8436c12b43, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3533,14 +3585,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &1507832959
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507832956}
-  m_CullTransparentMesh: 1
 --- !u!224 &1540903531 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7483616284491954252, guid: bc7e8c3b00c78f94f87cb052dd5314c9, type: 3}
@@ -4206,6 +4250,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1194193475}
     m_Modifications:
+    - target: {fileID: 3999821199692393948, guid: 8c9a63ecb57fcd84caddac842ba7bc6e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0b77711a74a62e4384d0ddf684fa604, type: 3}
     - target: {fileID: 5890452484052450313, guid: 8c9a63ecb57fcd84caddac842ba7bc6e, type: 3}
       propertyPath: m_Name
       value: Stage_2

@@ -983,11 +983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347060900164401308, guid: d3ebc124ed4241d48836f63125b447fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.65
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 4347060900164401308, guid: d3ebc124ed4241d48836f63125b447fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.57
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 4347060900164401308, guid: d3ebc124ed4241d48836f63125b447fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3293,7 +3293,7 @@ MonoBehaviour:
   - {fileID: 370541592}
   - {fileID: 1667155222}
   - {fileID: 1966880268}
-  _levelData: {fileID: 11400000, guid: 96f0296d8fa0a5543ac0b8f72ad6ece6, type: 2}
+  _levelData: {fileID: 11400000, guid: 1a638366261b1f64c859ca2c085bcaaf, type: 2}
   _camera: {fileID: 1651560915}
   _cameraSpeed: 10
   _endPanel: {fileID: 846804160}

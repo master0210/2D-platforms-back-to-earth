@@ -96,8 +96,9 @@ public class Player : MonoBehaviour
             animator.Play(Mathf.Abs(velocityX) > 0.2f ? _walk.name : _idle.name);
         }
 
+
         //Velocity Limiter
-        if(velocityY < -_gravityForce * Time.deltaTime * 4f)
+        if (velocityY < -_gravityForce * Time.deltaTime * 4f)
         {
             forceValue = velocityY;
             rb.AddForce(-forceValue * gravityUpDirection);
@@ -114,6 +115,7 @@ public class Player : MonoBehaviour
         Quaternion rotation = Quaternion.FromToRotation(transform.up, gravityUpDirection) * transform.rotation;
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10f);
     }
+
 
     public void GetGravityDirection()
     {

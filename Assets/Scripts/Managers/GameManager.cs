@@ -173,6 +173,7 @@ public class GameManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(Constants.Data.MAIN_MENU);
     }
 
+
     public void RestartGame()
     {
         string levelName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
