@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9105700004993802579}
   - component: {fileID: 1693861887047862574}
   - component: {fileID: 941387954805572645}
+  - component: {fileID: -5448413590737154695}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -28,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5512859815802064618}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8250015536313401040
 SpriteRenderer:
@@ -98,6 +99,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: b63705ecede5c83458886e62fcc4de7a, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -116,7 +136,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!95 &9105700004993802579
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,7 +153,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!50 &1693861887047862574
 Rigidbody2D:
   serializedVersion: 4
@@ -151,6 +172,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: b63705ecede5c83458886e62fcc4de7a, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -168,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotateValue: 0
+  ButtonMoveForce: 5
   _jumpForce: 8
   _moveForce: 800
   _gravityForce: 1000
@@ -184,3 +212,19 @@ MonoBehaviour:
   _walk: {fileID: 7400000, guid: c0ebde031272cf14a8e045c74357dded, type: 2}
   _jump: {fileID: 7400000, guid: dad5f2cb10a9ef54199d7d172994f5d0, type: 2}
   _fall: {fileID: 7400000, guid: 9f22f8e6553ef044cbd95a6a442e8e9c, type: 2}
+--- !u!114 &-5448413590737154695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5512859815802064618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56f7a693dc1c0e4d843d20315542b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonMoveForce: 5
+  player: {fileID: 0}
+  moveRight: 0
+  moveLeft: 0

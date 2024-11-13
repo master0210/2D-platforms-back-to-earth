@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     private float _cameraSpeed;
 
     [SerializeField]
-    private GameObject _endPanel, _perfectObject;
+    private GameObject _endPanel;// _perfectObject;
 
     [SerializeField]
     private TMP_Text _retryText;
@@ -51,7 +51,8 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < totalDiamonds; i++)
         {
             _diamonds[i].SetActive(true);
-            _diamonds[i].GetComponent<Image>().color = Color.black;
+            _diamonds[i].GetComponent<Image>().color = Color.gray;
+                ;
         }
 
 
@@ -78,13 +79,13 @@ public class GameManager : MonoBehaviour
         _retryText.text = "retries : " + numOfRetries.ToString();
 
 
-        string perfectKey = levelName + "_" + Constants.Data.PERFECT;
-        if(numOfRetries == 0 && currentDiamonds == totalDiamonds)
-        {
-            PlayerPrefs.SetInt(perfectKey, 1);
-        }
-        _perfectObject.SetActive((PlayerPrefs.HasKey(Constants.Data.PERFECT) 
-            ? PlayerPrefs.GetInt(perfectKey) : 0) == 1);
+        //string perfectKey = levelName + "_" + Constants.Data.PERFECT;
+        //if(numOfRetries == 0 && currentDiamonds == totalDiamonds)
+        //{
+        //    PlayerPrefs.SetInt(perfectKey, 1);
+        //}
+        //_perfectObject.SetActive((PlayerPrefs.HasKey(Constants.Data.PERFECT) 
+        //    ? PlayerPrefs.GetInt(perfectKey) : 0) == 1);
 
         for (int i = 0; i < _endDiamonds.Count; i++)
         {
@@ -94,7 +95,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < totalDiamonds; i++)
         {
             _endDiamonds[i].SetActive(true);
-            _endDiamonds[i].GetComponent<Image>().color = Color.black;
+            _endDiamonds[i].GetComponent<Image>().color = Color.gray;
         }
 
         for (int i = 0; i < currentDiamonds; i++)
@@ -185,6 +186,7 @@ public class GameManager : MonoBehaviour
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(levelName);
     }
+
 
     public void MoveCamera(Vector3 targetPos)
     {

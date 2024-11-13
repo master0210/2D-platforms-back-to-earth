@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -17,7 +17,7 @@ public class MainMenuManager : MonoBehaviour
     private AnimationClip _clickClip;
 
     [SerializeField]
-    private Animator _quitAnimator, _playAnimator, _howToPlayAnimator;
+    private Animator _quitAnimator, _playAnimator, _newgameAnimator, _howToPlayAnimator;
 
     [SerializeField]
     private TMP_Text _levelsDiamondText, _stageDiamondsText, _currentStageText;
@@ -72,6 +72,12 @@ public class MainMenuManager : MonoBehaviour
         StartCoroutine(IClickedPlay());
     }
 
+    public void NewGame()
+    {
+        StartCoroutine(INewGame());
+    }
+
+
     public void ToggleSound()
     {
         bool sound = (PlayerPrefs.HasKey(Constants.Data.SETTINGS_SOUND) ?
@@ -108,6 +114,8 @@ public class MainMenuManager : MonoBehaviour
         _stagePanel.SetActive(true);
     }
 
+    
+
     private IEnumerator IClickedPlay()
     {
         float animTime = _clickClip.length;
@@ -142,4 +150,30 @@ public class MainMenuManager : MonoBehaviour
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(Constants.Data.HOW_TO_PLAY);
     }
+
+    private IEnumerator INewGame()
+    {
+        float animTime = _clickClip.length;
+        _newgameAnimator.Play(_clickClip.name);
+        yield return new WaitForSeconds(animTime);
+
+        PlayerPrefs.SetInt(Constants.Data.DIAMONDS, 0);
+
+        for (int stageIndex = 0; stageIndex < Stages.Count; stageIndex++)
+        {
+            for (int levelIndex = 0; levelIndex < Stages[stageIndex].Levels.Count; levelIndex++)
+            {
+                string levelName = Constants.Data.LEVEL_NAME + "_" + (stageIndex + 1) + "_" + (levelIndex + 1);
+                PlayerPrefs.SetInt(levelName, 0);
+
+                string retryKey = levelName + "_" + Constants.Data.RETRY;
+                PlayerPrefs.SetInt(retryKey, 0);
+            }
+        }
+
+        // Cập nhật giá trị Diamonds sau khi đặt lại
+        Diamonds = 0;
+        _stageDiamondsText.text = "X " + Diamonds.ToString();
+    }
+
 }

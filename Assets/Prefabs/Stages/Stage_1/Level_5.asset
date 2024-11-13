@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa07daf298fe0f478742ee252811744, type: 3}
   m_Name: Level_5
   m_EditorClassIdentifier: 
-  TotalDiamonds: 2
+  TotalDiamonds: 3

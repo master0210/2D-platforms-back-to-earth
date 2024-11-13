@@ -14,7 +14,7 @@ public class LevelSelect : MonoBehaviour
     private Button _button;
 
     [SerializeField]
-    private GameObject _activeObject, _perfectObject;
+    private GameObject _activeObject; //_perfectObject;
 
     [SerializeField]
     private TMP_Text _levelText;
@@ -40,9 +40,9 @@ public class LevelSelect : MonoBehaviour
         string levelName = Constants.Data.LEVEL_NAME + "_" + currentStage.ToString() + "_" + _currentLevel.ToString();
         acquiredDiamonds = PlayerPrefs.HasKey(levelName) ? PlayerPrefs.GetInt(levelName) : 0;
 
-        string levelPerfect = levelName + "_" + Constants.Data.PERFECT;
-        bool isPerfect = (PlayerPrefs.HasKey(levelPerfect) ? PlayerPrefs.GetInt(levelPerfect) : 0) == 1;
-        _perfectObject.SetActive(isPerfect);
+        //string levelPerfect = levelName + "_" + Constants.Data.PERFECT;
+        //bool isPerfect = (PlayerPrefs.HasKey(levelPerfect) ? PlayerPrefs.GetInt(levelPerfect) : 0) == 1;
+        //_perfectObject.SetActive(isPerfect);
 
         for (int i = 0; i < _diamonds.Count; i++)
         {
@@ -50,10 +50,10 @@ public class LevelSelect : MonoBehaviour
         }
 
         _activeObject.SetActive(false);
-        if(_currentLevel == 8)
-        {
-            _activeObject.SetActive(MainMenuManager.Instance.Diamonds < 99);
-        }
+        //if (_currentLevel == 6)
+        //{
+        //    _activeObject.SetActive(MainMenuManager.Instance.Diamonds < 99);
+        //}
 
         _button.onClick.AddListener(ClickedLevel);
 

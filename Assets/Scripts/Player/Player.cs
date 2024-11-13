@@ -1,10 +1,12 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
     public int RotateValue;
+    public float ButtonMoveForce = 5f;
 
     [SerializeField]
     private float _jumpForce, _moveForce, _gravityForce;
@@ -135,7 +137,7 @@ public class Player : MonoBehaviour
                 closestObject = item.collider.gameObject;
             }
         }
-
+      
         gravityUpDirection = closestObject.GetComponent<GravityDirection>().GetDirection(transform.position);
 
         if(closestObject != previousGravityObejct)
@@ -167,5 +169,29 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
     }
+
+    public void JumpAction()
+    {
+        if (isGrounded)
+        {
+            rb.AddForce(_jumpForce * gravityUpDirection, ForceMode2D.Impulse);
+        }
+    }
+
+    //public void MoveRight()
+   // {
+    //    rb.AddForce(-ButtonMoveForce * moveDirection, ForceMode2D.Impulse);
+    //}
+
+   // public void MoveLeft()
+   // {
+   //     rb.AddForce(ButtonMoveForce * moveDirection, ForceMode2D.Impulse);
+   // }
+
+   // public void StopMoving() 
+   // {
+   //     rb.velocity = new Vector2(0, rb.velocity.y); // Duy trì vận tốc Y
+   // }
 }
